@@ -1,0 +1,40 @@
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/appsettings.Development.json
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/appsettings.json
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Recipes Server
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Recipes Server.deps.json
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Recipes Server.runtimeconfig.json
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Recipes Server.runtimeconfig.dev.json
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Recipes Server.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/ref/Recipes Server.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Recipes Server.pdb
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Microsoft.OpenApi.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.csprojAssemblyReference.cache
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.GeneratedMSBuildEditorConfig.editorconfig
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.AssemblyInfoInputs.cache
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.AssemblyInfo.cs
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.csproj.CoreCompileInputs.cache
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.MvcApplicationPartsAssemblyInfo.cs
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.MvcApplicationPartsAssemblyInfo.cache
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/staticwebassets/Recipes Server.StaticWebAssets.Manifest.cache
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/staticwebassets/Recipes Server.StaticWebAssets.xml
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/scopedcss/bundle/Recipes Server.styles.css
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.RazorTargetAssemblyInfo.cache
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.csproj.CopyComplete
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/ref/Recipes Server.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.pdb
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/obj/Debug/net5.0/Recipes Server.genruntimeconfig.cache
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Humanizer.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Npgsql.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/AutoMapper.dll
+/home/eonc/Documents/Github/Recipe Site/Recipes Server/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
