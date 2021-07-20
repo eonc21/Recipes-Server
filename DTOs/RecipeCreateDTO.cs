@@ -20,5 +20,11 @@ namespace Recipes_Server.DTO
         
         public DateTime AddedOn { get; set; }
         
+        public string Description { get; set; }
+        
+        public string PictureLink { get; set; }
+
+
+        
     }
 }

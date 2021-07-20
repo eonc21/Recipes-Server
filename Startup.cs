@@ -47,6 +47,7 @@ namespace Recipes_Server
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<IRecipeRepo, RecipeRepo>();
             services.AddScoped<IIngredientRepo, IngredientRepo>();
+            // services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,11 +60,15 @@ namespace Recipes_Server
                 // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Recipes_Server v1"));
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             
             app.UseRouting();
 
             app.UseAuthorization();
+
+            // app.UseCors(builder => builder
+            //     .AllowAnyOrigin());
+            //
 
             app.UseEndpoints(endpoints =>
             {
