@@ -29,5 +29,8 @@ namespace Recipes_Server.Models
         [Required]
         public string PictureLink { get; set; }
         
+        [Required]
+        public Category Category { get; set; }
+
     }
 }
