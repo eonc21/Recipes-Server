@@ -23,6 +23,8 @@ namespace Recipes_Server.DTO
         public string Description { get; set; }
         
         public string PictureLink { get; set; }
+        
+        public Category Category { get; set; }
 
 
         

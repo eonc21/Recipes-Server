@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Contracts;
 using Recipes_Server.DTOs;
+using Recipes_Server.Models;
 
 namespace Recipes_Server.DTOs
 {
@@ -22,8 +23,9 @@ namespace Recipes_Server.DTOs
         public string Description { get; set; }
         
         public string PictureLink { get; set; }
-
-
+        
+        public Category Category { get; set; }
+        
         
     }
 }

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Recipes_Server.Models;
 namespace Recipes_Server.Data.Recipe
 
@@ -18,8 +19,18 @@ namespace Recipes_Server.Data.Recipe
                 .Entity<Models.Recipe>()
                 .HasMany(r => r.Ingredients)
                 .WithMany(i => i.Recipes);
-            
-            base.OnModelCreating(modelBuilder);
+
+            modelBuilder
+                .Entity<Models.Recipe>()
+                .HasOne(r => r.Category);
+                // .WithMany(i => i.Recipes);
+                
+                modelBuilder
+                .Entity<Category>()
+                .Property(d => d.Name)
+                .HasConversion(new EnumToStringConverter<Category.CategoryEnum>());
+
+                base.OnModelCreating(modelBuilder);
         }
     }
 }
