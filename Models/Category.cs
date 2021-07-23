@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
@@ -9,7 +10,7 @@ namespace Recipes_Server.Models
     public class Category
     {
         [Required]
-        public CategoryEnum Name { get; set; }
+        public  CategoryEnum Name { get; set; }
 
         [Required]
         public string StringName
@@ -23,16 +24,18 @@ namespace Recipes_Server.Models
         [Key]
         public int Id { get; set; }
         
-        // [JsonConverter(typeof(StringEnumConverter<Category, string, CategoryEnum>))]
+        [Required]
+        public IEnumerable<Recipe> Recipes { get; set; }
+
         public enum CategoryEnum
         {
             Chicken = 1,
             Pasta = 2,
             Beef = 3,
-            Pork = 4, 
+            Pork = 4,
             NoMeat = 5
-        }
-        
-        
+        };
+
+
     }
 }

@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Recipes_Server.Data;
+using Recipes_Server.Data.Category;
 using Recipes_Server.Data.Ingredient;
 using Recipes_Server.Data.Recipe;
 using Recipes_Server.Repositories;
@@ -47,6 +48,7 @@ namespace Recipes_Server
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<IRecipeRepo, RecipeRepo>();
             services.AddScoped<IIngredientRepo, IngredientRepo>();
+            services.AddScoped<ICategoryRepo, CategoryRepo>();
             // services.AddCors();
         }
 

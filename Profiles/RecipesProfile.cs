@@ -14,6 +14,8 @@ namespace Recipes_Server.Profiles
             CreateMap<IngredientReadDTO, Ingredient>();
             CreateMap<Recipe, RecipeReadDTO>();
             CreateMap<RecipeCreateDTO, Recipe>();
+            CreateMap<Category, CategoryReadDTO>();
+            CreateMap<CategoryReadDTO, Category>();
         }   
     }
 }

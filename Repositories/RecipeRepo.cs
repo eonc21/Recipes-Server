@@ -26,7 +26,7 @@ namespace Recipes_Server.Repositories
 
         public IEnumerable<Recipe> GetRecipes()
         {
-            return _context.Recipes.Include(r => r.Ingredients).Include(c => c.Category);
+            return _context.Recipes.Include(r => r.Ingredients).Include(c => c.Categories);
         }
 
         public Recipe GetRecipeById(int id)

@@ -12,6 +12,8 @@ namespace Recipes_Server.Data.Recipe
 
         public DbSet<Models.Recipe> Recipes { get; set; }
         public DbSet<Models.Ingredient> Ingredients { get; set; }
+        public DbSet<Models.Category> Categories { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,13 +24,9 @@ namespace Recipes_Server.Data.Recipe
 
             modelBuilder
                 .Entity<Models.Recipe>()
-                .HasOne(r => r.Category);
-                // .WithMany(i => i.Recipes);
-                
-                modelBuilder
-                .Entity<Category>()
-                .Property(d => d.Name)
-                .HasConversion(new EnumToStringConverter<Category.CategoryEnum>());
+                .HasMany(r => r.Categories)
+                .WithMany(c => c.Recipes);
+            
 
                 base.OnModelCreating(modelBuilder);
         }

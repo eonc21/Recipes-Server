@@ -24,7 +24,7 @@ namespace Recipes_Server.DTOs
         
         public string PictureLink { get; set; }
         
-        public Category Category { get; set; }
+        public IEnumerable<CategoryReadDTO> Categories { get; set; }
         
         
     }

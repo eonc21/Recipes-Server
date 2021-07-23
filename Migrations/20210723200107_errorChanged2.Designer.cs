@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Recipes_Server.Data.Recipe;
@@ -9,30 +10,16 @@ using Recipes_Server.Data.Recipe;
 namespace Recipes_Server.Migrations
 {
     [DbContext(typeof(RecipeContext))]
-    partial class RecipeContextModelSnapshot : ModelSnapshot
+    [Migration("20210723200107_errorChanged2")]
+    partial class errorChanged2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-            modelBuilder.Entity("CategoryRecipe", b =>
-                {
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("RecipesId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("CategoriesId", "RecipesId");
-
-                    b.HasIndex("RecipesId");
-
-                    b.ToTable("CategoryRecipe");
-                });
 
             modelBuilder.Entity("IngredientRecipe", b =>
                 {
@@ -47,6 +34,21 @@ namespace Recipes_Server.Migrations
                     b.HasIndex("RecipesId");
 
                     b.ToTable("IngredientRecipe");
+                });
+
+            modelBuilder.Entity("Recipes_Server.DTOs.CategoryReadDTO", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("Name")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CategoryReadDTO");
                 });
 
             modelBuilder.Entity("Recipes_Server.Models.Category", b =>
@@ -90,6 +92,12 @@ namespace Recipes_Server.Migrations
                     b.Property<DateTime>("AddedOn")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("CategoryId1")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -108,22 +116,11 @@ namespace Recipes_Server.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("CategoryId1");
+
                     b.ToTable("Recipes");
-                });
-
-            modelBuilder.Entity("CategoryRecipe", b =>
-                {
-                    b.HasOne("Recipes_Server.Models.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Recipes_Server.Models.Recipe", null)
-                        .WithMany()
-                        .HasForeignKey("RecipesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("IngredientRecipe", b =>
@@ -139,6 +136,24 @@ namespace Recipes_Server.Migrations
                         .HasForeignKey("RecipesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Recipes_Server.Models.Recipe", b =>
+                {
+                    b.HasOne("Recipes_Server.Models.Category", null)
+                        .WithMany("Recipes")
+                        .HasForeignKey("CategoryId");
+
+                    b.HasOne("Recipes_Server.DTOs.CategoryReadDTO", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId1");
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Recipes_Server.Models.Category", b =>
+                {
+                    b.Navigation("Recipes");
                 });
 #pragma warning restore 612, 618
         }
