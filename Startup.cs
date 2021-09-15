@@ -40,7 +40,7 @@ namespace Recipes_Server
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
-                        .AllowCredentials() );
+                        );
             });
     
     
