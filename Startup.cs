@@ -80,14 +80,11 @@ namespace Recipes_Server
         
         private string GetConnectionString()
         {
-            var env = Environment.GetEnvironmentVariable("DOTNET_ASPNETCORE_ENVIRONMENT");
+            var connectionUrl = Configuration["DATABASE_URL"];
 
-            if (env is "Development")
+            if (connectionUrl is null)
                 return
                     "Server=localhost;Port=5432;Database=recipes;User Id=recipes_api;Password=recipes_api_password";
-
-            // Get the connection string from the ENV variables
-            var connectionUrl = Configuration["DATABASE_URL"];
 
             // parse the connection string
             var databaseUri = new Uri(connectionUrl);
