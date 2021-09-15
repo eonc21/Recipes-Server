@@ -48,7 +48,7 @@ namespace Recipes_Server
             services.AddScoped<IRecipeRepo, RecipeRepo>();
             services.AddScoped<IIngredientRepo, IngredientRepo>();
             services.AddScoped<ICategoryRepo, CategoryRepo>();
-            services.AddCors();
+            // services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,13 +62,15 @@ namespace Recipes_Server
             }
 
             // app.UseHttpsRedirection();
-            
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseCors(builder => builder
                 .AllowAnyOrigin());
+                
+            
+            app.UseCors("CorsPolicy");
             
 
             app.UseEndpoints(endpoints =>
