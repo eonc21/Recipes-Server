@@ -34,6 +34,17 @@ namespace Recipes_Server
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials() );
+            });
+    
+    
+            services.AddMvc(); 
             services.AddDbContext<RecipeContext>(opt =>
             {
                 opt.UseNpgsql(GetConnectionString());
@@ -66,12 +77,11 @@ namespace Recipes_Server
 
             app.UseAuthorization();
 
-            app.UseCors(builder => builder
-                .AllowAnyOrigin());
-                
-            
+            // global policy - assign here or on each controller
             app.UseCors("CorsPolicy");
-            
+
+            // ...
+
 
             app.UseEndpoints(endpoints =>
             {
