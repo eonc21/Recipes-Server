@@ -36,8 +36,7 @@ namespace Recipes_Server
 
             services.AddDbContext<RecipeContext>(opt =>
             {
-                opt.UseNpgsql(Configuration
-                    .GetConnectionString("RecipeConnection"));
+                opt.UseNpgsql(GetConnectionString());
             });
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -68,14 +67,36 @@ namespace Recipes_Server
 
             app.UseAuthorization();
 
-            // app.UseCors(builder => builder
-            //     .AllowAnyOrigin());
-            //
+            app.UseCors(builder => builder
+                .AllowAnyOrigin());
+            
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+        }
+        
+        
+        private string GetConnectionString()
+        {
+            var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            if (env is "Development")
+                return
+                    "Server=localhost;Port=5432;Database=recipes;User Id=recipes_api;Password=recipes_api_password";
+
+            // Get the connection string from the ENV variables
+            var connectionUrl = Configuration["DATABASE_URL"];
+
+            // parse the connection string
+            var databaseUri = new Uri(connectionUrl);
+
+            var db = databaseUri.LocalPath.TrimStart('/');
+            var userInfo = databaseUri.UserInfo.Split(':', StringSplitOptions.RemoveEmptyEntries);
+
+            return
+                $"User ID={userInfo[0]};Password={userInfo[1]};Host={databaseUri.Host};Port={databaseUri.Port};" +
+                $"Database={db};Pooling=true;SSL Mode=Require;Trust Server Certificate=True;";
         }
     }
 }

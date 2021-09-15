@@ -31,7 +31,10 @@ namespace Recipes_Server.Repositories
 
         public Recipe GetRecipeById(int id)
         {
-            return _context.Recipes.Include(r => r.Ingredients).FirstOrDefault(recipe => recipe.Id == id);
+            return _context.Recipes
+                .Include(r => r.Ingredients).
+                Include(r => r.Categories).
+                FirstOrDefault(recipe => recipe.Id == id);
         }
 
         public void DeleteRecipeById(int id)
