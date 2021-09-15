@@ -80,7 +80,8 @@ namespace Recipes_Server
         
         private string GetConnectionString()
         {
-            var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            var env = Environment.GetEnvironmentVariable("DOTNET_ASPNETCORE_ENVIRONMENT");
+
             if (env is "Development")
                 return
                     "Server=localhost;Port=5432;Database=recipes;User Id=recipes_api;Password=recipes_api_password";
